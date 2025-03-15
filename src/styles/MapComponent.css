@@ -1,0 +1,162 @@
+.main-container {
+  display: flex;
+  height: 100%;
+  /* Учитываем высоту заголовка */
+  width: 100%;
+}
+
+.table-container {
+  flex: 0 1 200px;
+  /* Начальная ширина 200px */
+  min-width: 150px;
+  /* Минимальная ширина 150px */
+  max-width: 200px;
+  /* Максимальная ширина 200px */
+  height: calc(100% - 40px);
+  /* Высота за вычетом отступов */
+  overflow-y: auto;
+  margin: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  background-color: var(--primary-color);
+}
+
+.ant-table-cell,
+.ant-table-thead>tr>th {
+  text-align: center !important;
+  /* Центрирование значений и заголовков в ячейках */
+}
+
+.map-canvas {
+  flex: 1;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px var(--shadow-color);
+  background-color: var(--primary-color);
+  position: relative;
+  overflow: hidden;
+  /* Добавим overflow, чтобы дочерние элементы не выходили за края */
+}
+
+.map-container {
+  position: absolute;
+  z-index: 1000;
+  background: var(--secondary-color);
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.select-container {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 500;
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  background: var(--primary-color);
+  /* Скругленные края для карты */
+  border-radius: 10px;
+  /* нельзя так поворачивать карту */
+  /* transform: rotate(2.7deg); */
+  transform-origin: center center;
+}
+
+.marker-legend {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  /* Полупрозрачный фон */
+  padding: 10px;
+  border-radius: 8px;
+  /* Скругленные края для легенды */
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legend-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.legend-text {
+  font-size: 14px;
+}
+
+.dark-mode {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.leaflet-draw-tooltip {
+  pointer-events: none;
+}
+
+
+/* 🔻 корректировка кнопок редактирования зон 🔻 */
+.leaflet-draw-toolbar {
+  width: 32px !important;
+  height: 32px !important;
+  border: none !important;
+}
+
+.leaflet-draw-toolbar>a {
+  width: 32px !important;
+  height: 32px !important;
+  border: none !important;
+  border-radius: 0 !important;
+  border: 1px solid #d9d9d9 !important;
+  box-sizing: border-box;
+  border-radius: 6px !important;
+}
+
+.leaflet-draw-toolbar>a:not(.leaflet-disabled):hover {
+  background-color: #fff !important;
+  border: 1px solid #4096ff !important;
+}
+
+.leaflet-draw-toolbar>a.leaflet-disabled:hover {
+  border: 1px solid #d9d9d9 !important;
+}
+
+.leaflet-draw.leaflet-control {
+  position: absolute !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  top: 10px !important;
+  left: 10px !important;
+}
+
+.leaflet-draw-actions-bottom {
+  margin-top: 2px !important;
+}
+
+.leaflet-draw-actions-top {
+  margin-top: 4px !important;
+}
+
+.leaflet-draw-actions.leaflet-draw-actions-top:not(.leaflet-draw-actions-bottom) {
+  margin-top: 2px !important;
+}
+
+.leaflet-draw-edit-remove {
+  margin-top: 12px;
+}
+
+.leaflet-touch .leaflet-draw-toolbar .leaflet-draw-edit-remove.leaflet-disabled {
+  background-position: -240px -1px !important;
+}
+
+/* 🔺 корректировка кнопок редактирования зон 🔺 */

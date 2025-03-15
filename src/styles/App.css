@@ -1,0 +1,43 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.main-container {
+  display: flex;
+  height: calc(100% - 60px); /* Учитываем высоту заголовка */
+  width: 100%;
+}
+
+.map-canvas {
+  flex: 1;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  position: relative;
+  overflow: hidden; /* Добавим overflow, чтобы дочерние элементы не выходили за края */
+}
+
+.map-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  background: white;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.select-container {
+  display: inline-block;
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 10px; /* Скругленные края для карты */
+}

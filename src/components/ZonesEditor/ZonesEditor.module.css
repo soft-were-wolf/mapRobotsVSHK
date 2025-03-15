@@ -1,0 +1,22 @@
+/* кнопка видимости зон */
+.zonesVisibilitySwitch {
+    top: 10px;
+    left: 54px;
+}
+
+/* кнопка применения данных о зонах */
+.applyZones {
+    top: 10px;
+    left: 176px;
+}
+
+.zonesBtn {
+    position: absolute;
+    width: 110px;
+    height: 32px;
+    z-index: 500;
+}
+
+.space {
+    width: 100%;
+}

@@ -1,0 +1,47 @@
+/* styles/Header.css */
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 2px solid #0056b3;
+  box-sizing: border-box;
+}
+
+header.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+header.dark {
+  background-color: #001529;
+  color: #ffffff;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-right span {
+  font-size: 1em;
+}
+
+.ant-menu-horizontal {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.ant-menu-horizontal > .ant-menu-item {
+  font-size: 18px;
+  padding: 0 20px;
+  text-align: center;
+}

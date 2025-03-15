@@ -1,0 +1,29 @@
+.marker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.marker-image {
+  width: 40px;
+  height: 40px;
+  transition: fill 0.3s;
+}
+
+.marker-label {
+  margin-bottom: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.custom-icon {
+  background-color: transparent;
+  border: none;
+  transition: transform 1s;
+}
