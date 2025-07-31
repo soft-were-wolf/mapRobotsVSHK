@@ -43,10 +43,12 @@ const useRobotsData = (userToken, interval = 1000) => {
   const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
   const apiEndpointRobots = import.meta.env.VITE_API_ENDPOINT_ROBOTS;
 
+  const robotsDataURL = import.meta.env.VITE_ROBOTS_DATA;
+
   const fetchRobotsData = useCallback(async () => {
     try {
       const response = await axios.get(
-        "http://10.1.242.61/proxy/vshk/v1/robots",
+        robotsDataURL,
         {
           headers: { token: userToken },
           timeout: 10000,
