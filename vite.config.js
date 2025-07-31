@@ -1,28 +1,33 @@
 import {
-  defineConfig
+  defineConfig, loadEnv
 } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from "path";
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  base: '/robotsMapVSHK',
-  build: { outDir: path.join(__dirname, "dist") },
-  server: {
-    host: "10.1.242.61",
-    port: 9081,
-    cors: false,
-    proxy: {
-      '/apiMooe': {
-        target: "http://10.0.90.52",
-        changeOrigin: true,
-        secure: false,
-        rewrite: (path) => path.replace(/^\/apiMooe/, '')
+export default defineConfig(({ mode }) => {
+
+  const env = loadEnv(mode, process.cwd(), '');
+
+  return {
+    base: env.BASE_DIR,
+    build: { outDir: path.join(__dirname, "dist") },
+    server: {
+      host: env.MAP_SERVER_HOST,
+      port: env.MAP_SERVER_PORT,
+      cors: false,
+      proxy: {
+        '/apiMooe': {
+          target: env.BASE_DIR,
+          changeOrigin: true,
+          secure: false,
+          rewrite: (path) => path.replace(/^\/apiMooe/, '')
+        }
       }
+    },
+    plugins: [react()],
+    define: {
+      'process.env': process.env,
     }
-  },
-  plugins: [react()],
-  define: {
-    'process.env': process.env,
   }
-})
+});
